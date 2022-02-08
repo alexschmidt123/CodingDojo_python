@@ -1,3 +1,22 @@
+class Department:
+    departments = []
+    def __init__ (self, name , location):
+        self.name = name
+        self.location = location
+        self.employees = []
+
+    def add_employee (self,employee):
+        self.employees.append(employee)
+
+    def modify_salaries(self,change):
+        for employee in self.employees:
+            employee.change_salary(int(employee.salary(1+change)))
+
+    def __repr__(self):
+        return self.name
+
+
+
 class Employee:
 
     def __init__(self, first_name, last_name, salary, department, middle_name = None):
@@ -18,7 +37,8 @@ class Employee:
         else:
             return f"{self.first_name} {self.middle_name} {self.last_name}"
     
-    # def __repr__(self):
+    def __repr__(self):
+        return f"{self.first_name[0]}  {self.last_name} - {self.department}"
 
 
 new_employee1 = Employee('Adam', 'Jone', 40000, 'Sales')
@@ -37,3 +57,4 @@ employees =[new_employee1,new_employee2,new_employee3,new_employee4]
 
 for employee in employees:
     print(employee.full_name())
+    print(employee.__repr__())
