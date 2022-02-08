@@ -1,0 +1,11 @@
+Encapsulation: 封裝
+
+
+Inheritance: 继承
+
+
+Polymorphism: 多态
+
+
+Abstraction: 抽象
+
