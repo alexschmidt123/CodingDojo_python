@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+h1{
+    color: darkorange;
+}
+.container{
+    padding: 20px;
+    margin: 50px auto;
+    width: 40%;
+    min-height: 300px;
+    background-color: rgb(28, 27, 29);
+    color: white;
+    border-radius: 25px;
+}
+
+.form-group{
+    margin: 10px auto;
+}
+
+.btn{
+    margin-top: 30px;
+    background-color: darkorange;
+    color: black
+}
+.feature{
+    display: flex;
+    justify-content: space-between;
+}
+
+.feature1{
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+}
