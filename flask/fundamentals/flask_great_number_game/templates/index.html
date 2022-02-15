@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flask Session</title>
+    <title>Great Number Game</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 <body>
     <div class="container">
-        <h1>Flask Session</h1>
-        <form action="/process_form" method="post">
+        <h1>GREAT NUMBER GAME</h1>
+        <h2>I'm thinking of a number between 1 and 100...</h2>
+        <form action="/process_guess" method="post">
             <div class="mb-3">
-                <label for="first_name" class="form-label">First Name</label>
-                <input type="text" name="first_name" id="first_name" class="form-control">
+                <label for="guess" class="form-label">Your Guess:</label>
+                <input type="number" name="guess" id="guess" class="form-control">
             </div>
             <div class="mb-3 d-flex justify-content-end">
-                <input type="submit" value="SUBMIT" class="btn btn-primary">
+                <input type="submit" value="GUESS" class="btn btn-primary">
             </div>
         </form>
     </div>
