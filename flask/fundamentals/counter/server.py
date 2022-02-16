@@ -3,16 +3,16 @@ app = Flask(__name__)
 app.secret_key = 'keep it secret, keep it safe'
 @app.route('/')
 def index():
-    if 'count' not in session:
-        session['count']=0
+    # if 'count' not in session:
+    #     session['count']=0
     session['count']+=1
     return render_template('index.html', count = session['count'])
 
 
 @app.route('/destroy_session')
 def refresh():
-    if 'count' in session:
-        session['count'] = 0
+    # if 'count' in session:
+    session['count'] = 0
     return  redirect ('/')
 
 
