@@ -1,24 +1,23 @@
-from flask import Flask, render_template  # Import Flask to allow us to create our app
-app = Flask(__name__)    # Create a new instance of the Flask class called "app"
+from flask import Flask, render_template, redirect, request
+from employee import Employee
 
+app = Flask(__name__)
 
-@app.route('/play')          # The "@" decorator associates this route with the function immediately following
-def hello_world():
-    return render_template('index.html')  # Return the string 'Hello World!' as a response
+@app.route('/')
+def index():
+    employees = Employee.get_all_employees()
 
-@app.route('/play/<int:x>')
-def flask(x):
-    y = "Hi " +x+"!"
-    return y
+    return render_template('index.html', employees = employees)
 
-@app.route('/play/<int:x>/<string:y>')
-def repeat(x,y):
-    arr = str()
-    for i in range (0,x):
-        arr = arr + y +'\n'
-    return arr
+@app.route('/employees/new')
+def new_employee():
 
+    return render_template('new_employee.html')
 
+@app.route('/employees/create', methods=['POST'])
+def create_employee():
+    Employee.create_employee(request.form)
+    return redirect('/')
 
-if __name__=="__main__":   # Ensure this file is being run directly and not from a different module    
-    app.run(debug=True)    # Run the app in debug mode.
+if __name__ == "__main__":
+    app.run(debug = True)
