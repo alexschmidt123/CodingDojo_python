@@ -59,15 +59,6 @@ def login_user():
 
     return redirect('/dashboard')
 
-@app.route('/dashboard')
-def success():
-
-    if not "user_id" in session:
-        flash("Please log in to view this resource")
-        return redirect('/')
-    
-    return render_template('dashboard.html')
-
 @app.route('/users/logout')
 def logout():
     session.clear()

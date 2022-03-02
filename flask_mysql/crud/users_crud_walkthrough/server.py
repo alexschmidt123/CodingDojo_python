@@ -45,6 +45,7 @@ def users_users_id_edit(user_id):
 def user_user_id_update(user_id):
     data = {
         'user_id': user_id,
+        # questions: why not server_user_id?
         'server_first_name': request.form['template_first_name'],
         'server_last_name': request.form['template_last_name'],
         'server_email': request.form['template_email']

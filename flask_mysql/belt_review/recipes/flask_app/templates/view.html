@@ -18,20 +18,19 @@
                 <a href="/dashboard">Dashboard</a>
                 <a href="/users/logout">Logout</a>
             </div>
-        <div class="content p-3 w-70">
+        </div>
+        <br>
+        <br>
+        <div class="content">
             <div class="card w-50">  
                 <div class="card-header d-flex justify-content-between">
                     <strong>{{ meal.name}}</strong>
                 </div>
                 <div class="card-body">
-                    <p class="card-text"><strong>Full Name: </strong>{{ user.first_name }} {{ user.last_name }}</p> 
-                    <p class="card-text"><strong>Email: </strong>{{ user.email }}</p>
-                    <p class="card-text"><strong>Created on: </strong>{{ user.created_at }}</p>
-                    <p class="card-text"><strong>Last Updated on: </strong>{{ user.updated_at }}</p>
-                </div>
-                <div class="card-footer">
-                    <a href="/users/{{ user.id }}/edit" class="btn btn-primary btn-sm">EDIT</a>
-                    <a href="/users/{{ user.id }}/delete" class="btn btn-danger btn-sm">DELETE</a>
+                    <p class="card-text"><strong>Description: </strong>{{ meal.description }}</p> 
+                    <p class="card-text"><strong>Under 30 minutes? </strong>{{ meal.under_30_minute }}</p>
+                    <p class="card-text"><strong>Instruction: </strong>{{ meal.instruction }}</p>
+                    <p class="card-text"><strong>Date Made: </strong>{{ meal.made_date }}</p>
                 </div>
             </div>
         </div>
